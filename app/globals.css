@@ -9,7 +9,7 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-    --background-dark: 222.2 84% 4.9%;
+    --background-dark: 222.2 84% 0%;
     --foreground-dark: 210 40% 98%;
 
     --card: 0 0% 100%;
