@@ -10,13 +10,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { ThemeToggle } from "@/components/theme-toggle";
 
-// Constants moved outside the component to prevent re-creation on each render
 const NAV_ITEMS = [
   { id: "about-us", name: "About Us", href: "/about-us" },
   { id: "contact-us", name: "Contact Us", href: "/contact-us" },
   { id: "sponsorship", name: "Sponsorship", href: "/sponsorship" },
-  { id: "whats-going-on", name: "What's Going On", href: "/whats-going-on" },
+  { id: "calendar", name: "Calendar", href: "/calendar" },
   { id: "wicys", name: "WiCyS", href: "/wicys" },
   {
     id: "horse-plinko",
@@ -51,7 +51,7 @@ export function Header() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-black hover:bg-white transition-colors text-sm px-3 py-2 rounded-md"
+              className="text-white hover:text-black hover:bg-white transition-colors text-sm px-2 py-2 rounded-md whitespace-nowrap"
             >
               {item.name}
             </a>
@@ -60,7 +60,7 @@ export function Header() {
               key={item.id}
               to={item.href}
               prefetch="intent"
-              className="text-white hover:text-black hover:bg-white transition-colors text-sm px-3 py-2 rounded-md"
+              className="text-white hover:text-black hover:bg-white transition-colors text-sm px-3 py-2 rounded-md whitespace-nowrap"
             >
               {item.name}
             </Link>
@@ -76,6 +76,7 @@ export function Header() {
         >
           Join Our Discord
         </Button>
+        <ThemeToggle />
 
         {/* Mobile Menu Trigger */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>

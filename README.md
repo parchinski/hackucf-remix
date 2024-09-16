@@ -1,33 +1,7 @@
-# Welcome to Remix + Vite + shadcn/ui!
-
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
-
-## Getting Started
-
-Node Server:
-
-```sh
-npx create-remix@latest --template jacob-ebey/remix-shadcn
-```
-
-Cloudflare Pages:
+Built for Cloudflare Pages:
 
 ```shellscript
 npx create-remix@latest --template https://github.com/jacob-ebey/remix-shadcn/tree/cloudflare
-```
-
-Or for a more flushed out template with a login flow and a SQLite database backed by Drizzle ORM:
-
-Node Server:
-
-```shellscript
-npx create-remix@latest --template https://github.com/jacob-ebey/remix-shadcn/tree/drizzle
-```
-
-Cloudflare Pages:
-
-```shellscript
-npx create-remix@latest --template https://github.com/jacob-ebey/remix-shadcn/tree/drizzle-cloudflare
 ```
 
 ## Built in theme switcher

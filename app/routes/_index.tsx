@@ -99,7 +99,7 @@ export default function Index() {
             offensive cybersecurity student organization.
           </p>
           <Link
-            to="#meetings" // this will route to the about-us route once created
+            to="/about-us"
             className="transition-colors border-2 bg-black hover:bg-brandGold text-lg hover:text-black border-brandGold text-brandGold rounded-full py-2 px-4 inline-block"
             aria-label="Learn more about Collegiate Cyber Defense Club"
           >
