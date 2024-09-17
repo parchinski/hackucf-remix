@@ -29,7 +29,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-40 w-full p-4 bg-black border-b border-stone-800 shadow-md flex justify-between items-center">
+    <header className="fixed top-0 z-40 w-full bg-background p-4 border-b border-stone-800 shadow-md flex justify-between items-center">
       {/* Logo */}
       <div className="flex items-center">
         <Link to="/" aria-label="HackUCF Home">
@@ -51,7 +51,7 @@ export function Header() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-black hover:bg-white transition-colors text-sm px-2 py-2 rounded-md whitespace-nowrap"
+              className="text-white hover:text-background hover:bg-white transition-colors text-sm px-2 py-2 rounded-md whitespace-nowrap"
             >
               {item.name}
             </a>
@@ -60,7 +60,7 @@ export function Header() {
               key={item.id}
               to={item.href}
               prefetch="intent"
-              className="text-white hover:text-black hover:bg-white transition-colors text-sm px-3 py-2 rounded-md whitespace-nowrap"
+              className="text-white hover:text-background hover:bg-white transition-colors text-sm px-2 py-2 rounded-md whitespace-nowrap"
             >
               {item.name}
             </Link>
@@ -72,7 +72,7 @@ export function Header() {
       <div className="flex items-center space-x-2">
         <Button
           variant="outline"
-          className="hidden lg:inline-flex bg-black border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-black text-sm"
+          className="hidden lg:inline-flex bg-background border-2 border-brandGold text-brandGold hover:bg-brandGold hover:text-background text-sm mx-2"
         >
           Join Our Discord
         </Button>
@@ -94,7 +94,7 @@ export function Header() {
           {/* Mobile Menu Content */}
           <SheetContent
             side="right"
-            className="w-[300px] sm:w-[400px] bg-black"
+            className="w-[300px] sm:w-[400px] bg-background"
           >
             <SheetHeader>
               <SheetTitle className="text-2xl text-brandGold">Menu</SheetTitle>
@@ -108,7 +108,7 @@ export function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="w-full text-left text-sm text-white hover:text-black hover:bg-white transition-colors px-3 py-2 rounded-md"
+                    className="w-full text-left text-sm text-white hover:text-background hover:bg-white transition-colors px-3 py-2 rounded-md"
                   >
                     {item.name}
                   </a>
@@ -118,7 +118,7 @@ export function Header() {
                     to={item.href}
                     prefetch="intent"
                     onClick={() => setIsOpen(false)}
-                    className="w-full text-left text-sm text-white hover:text-black hover:bg-white transition-colors px-3 py-2 rounded-md"
+                    className="w-full text-left text-sm text-white hover:text-background hover:bg-white transition-colors px-3 py-2 rounded-md"
                   >
                     {item.name}
                   </Link>
@@ -126,7 +126,7 @@ export function Header() {
               )}
               <Button
                 variant="outline"
-                className="bg-black border-brandGold text-brandGold hover:bg-brandGold hover:text-black text-sm transition-colors w-full"
+                className="bg-background border-brandGold text-brandGold hover:bg-brandGold hover:text-background text-sm transition-colors w-full"
                 onClick={() => setIsOpen(false)}
               >
                 Join Our Discord

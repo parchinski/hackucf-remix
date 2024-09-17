@@ -7,60 +7,59 @@
 */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --background-dark: 222.2 84% 0%;
-    --foreground-dark: 210 40% 98%;
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
+    --background-dark: 0 0% 0%; /* Black */
+    --foreground-dark: 0 0% 100%; /* White */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --card-dark: 222.2 84% 4.9%;
-    --card-foreground-dark: 210 40% 98%;
+    --card: 0 0% 0%; /* Black */
+    --card-foreground: 0 0% 100%; /* White */
+    --card-dark: 0 0% 0%; /* Black */
+    --card-foreground-dark: 0 0% 100%; /* White */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --popover-dark: 222.2 84% 4.9%;
-    --popover-foreground-dark: 210 40% 98%;
+    --popover: 0 0% 0%; /* Black */
+    --popover-foreground: 0 0% 100%; /* White */
+    --popover-dark: 0 0% 0%; /* Black */
+    --popover-foreground-dark: 0 0% 100%; /* White */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --primary-dark: 210 40% 98%;
-    --primary-foreground-dark: 222.2 47.4% 11.2%;
+    --primary: 43 91% 43%; /* Normal Gold */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --primary-dark: 43 91% 43%; /* Normal Gold */
+    --primary-foreground-dark: 0 0% 0%; /* Black */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --secondary-dark: 217.2 32.6% 17.5%;
-    --secondary-foreground-dark: 210 40% 98%;
+    --secondary: 0 0% 100%; /* White */
+    --secondary-foreground: 0 0% 0%; /* Black */
+    --secondary-dark: 0 0% 100%; /* White */
+    --secondary-foreground-dark: 0 0% 0%; /* Black */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --muted-dark: 217.2 32.6% 17.5%;
-    --muted-foreground-dark: 215 20.2% 65.1%;
+    --muted: 0 0% 100%; /* White */
+    --muted-foreground: 0 0% 0%; /* Black */
+    --muted-dark: 0 0% 100%; /* White */
+    --muted-foreground-dark: 0 0% 0%; /* Black */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --accent-dark: 217.2 32.6% 17.5%;
-    --accent-foreground-dark: 210 40% 98%;
+    --accent: 43 91% 43%; /* Normal Gold */
+    --accent-foreground: 0 0% 0%; /* Black */
+    --accent-dark: 43 91% 43%; /* Normal Gold */
+    --accent-foreground-dark: 0 0% 0%; /* Black */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --destructive-dark: 0 62.8% 30.6%;
-    --destructive-foreground-dark: 210 40% 98%;
+    --destructive: 43 91% 43%; /* Normal Gold */
+    --destructive-foreground: 0 0% 0%; /* Black */
+    --destructive-dark: 43 91% 43%; /* Normal Gold */
+    --destructive-foreground-dark: 0 0% 0%; /* Black */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --border-dark: 217.2 32.6% 17.5%;
-    --input-dark: 217.2 32.6% 17.5%;
-    --ring-dark: 212.7 26.8% 83.9%;
+    --border: 43 91% 43%; /* Normal Gold */
+    --input: 43 91% 43%; /* Normal Gold */
+    --ring: 43 91% 43%; /* Normal Gold */
+    --border-dark: 43 91% 43%; /* Normal Gold */
+    --input-dark: 43 91% 43%; /* Normal Gold */
+    --ring-dark: 43 91% 43%; /* Normal Gold */
 
     --radius: 0.5rem;
   }
 }
 
 /*
-  Theme switching based on this tweet from Devon Govett
-  https://twitter.com/devongovett/status/1757131288144663027
+  Theme switching based on Devon Govett's method
 */
 @layer base {
   :root {
@@ -80,12 +79,18 @@
     --theme-light: initial;
     --theme-dark: ;
     color-scheme: light;
+
+    /* Light mode adjustments */
+    --background: 0 0% 10%; /* Slightly lighter black */
+    /* Foreground remains white */
   }
 
   [data-theme="dark"] {
     --theme-light: ;
     --theme-dark: initial;
     color-scheme: dark;
+
+    /* Variables for dark theme are already set in :root */
   }
 }
 

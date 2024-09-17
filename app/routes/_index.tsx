@@ -86,10 +86,10 @@ export default function Index() {
     <div className="min-h-screen w-full">
       {/* Home Section */}
       <section
-        className="h-screen flex items-center justify-center p-8 bg-black relative scroll-mt-16"
+        className="h-screen flex items-center justify-center p-8 bg-background relative scroll-mt-16"
         id="home"
       >
-        <HackerBg className="absolute inset-0 w-full h-full" />
+        <HackerBg className="absolute inset-0 w-full h-full bg-background" />
         <div className="max-w-4xl text-center z-10 mt-16">
           <h1 className="text-5xl font-bold mb-4 bg-white text-transparent bg-clip-text drop-shadow-md py-1">
             Collegiate Cyber Defense Club at UCF
@@ -100,7 +100,7 @@ export default function Index() {
           </p>
           <Link
             to="/about-us"
-            className="transition-colors border-2 bg-black hover:bg-brandGold text-lg hover:text-black border-brandGold text-brandGold rounded-full py-2 px-4 inline-block"
+            className="transition-colors border-2 bg-background hover:bg-brandGold text-lg hover:text-background border-brandGold text-brandGold rounded-full py-2 px-4 inline-block"
             aria-label="Learn more about Collegiate Cyber Defense Club"
           >
             🌐 Learn More 🌐
@@ -110,14 +110,14 @@ export default function Index() {
 
       {/* Meetings and Membership Section */}
       <section
-        className="min-h-screen flex flex-col justify-center bg-black px-4 py-8 scroll-mt-16"
+        className="min-h-screen flex flex-col justify-center bg-background px-4 py-8 scroll-mt-16"
         id="meetings"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr">
           {CARD_DATA.map((card) => (
             <Card
               key={card.id}
-              className="bg-black border-brandGold flex flex-col mt-12 border-2 pb-3"
+              className="bg-background border-brandGold flex flex-col mt-12 border-2 pb-3"
             >
               <CardHeader className="py-3">
                 <CardTitle className="text-brandGold text-lg font-bold">
@@ -125,19 +125,22 @@ export default function Index() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-grow flex flex-col pb-2 space-y-4">
-                <img
-                  src={card.imageURL}
-                  alt={`${card.title}`}
-                  width={340}
-                  height={300}
-                  className="w-full h-auto"
-                />
+                <div className="w-full h-auto relative aspect-w-16 aspect-h-9">
+                  <img
+                    src={card.imageURL}
+                    alt={`${card.title}`}
+                    width={340}
+                    height={300}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
                 <CardDescription className="text-white text-sm">
                   {card.description}
                 </CardDescription>
               </CardContent>
               <CardFooter className="py-3">
-                <Button className="w-full bg-brandGold hover:bg-brandGoldHover text-black text-sm">
+                <Button className="w-full bg-brandGold hover:bg-brandGoldHover text-background text-sm">
                   {card.buttonText}
                 </Button>
               </CardFooter>
@@ -148,7 +151,7 @@ export default function Index() {
 
       {/* Stay Connected Section */}
       <section
-        className="min-h-screen flex flex-col justify-center bg-black px-8 scroll-mt-16"
+        className="min-h-screen flex flex-col justify-center bg-background px-8 scroll-mt-16"
         id="connect"
       >
         <div className="mb-8">
@@ -167,7 +170,7 @@ export default function Index() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brandGold hover:bg-brandGoldHover text-black h-12 w-12 flex items-center justify-center rounded-md"
+                className="bg-brandGold hover:bg-brandGoldHover text-background h-12 w-12 flex items-center justify-center rounded-md"
                 aria-label={`Follow us on ${social.label}`}
               >
                 {social.icon}
@@ -180,7 +183,7 @@ export default function Index() {
             <Link
               key={action.id}
               to={action.url}
-              className="bg-black hover:bg-brandGold hover:text-black border-brandGold text-brandGold border-2 py-2 px-4 rounded"
+              className="bg-background hover:bg-brandGold hover:text-background border-brandGold text-brandGold border-2 py-2 px-4 rounded"
             >
               {action.text}
             </Link>

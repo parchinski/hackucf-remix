@@ -36,21 +36,17 @@ export function ThemeToggle() {
   };
 
   return (
-    <div className="flex items-center space-x-4">
+    <div className="flex items-center space-x-4 mx-2">
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button
-            className="w-10 h-10 rounded-full border"
-            size="icon"
-            variant="ghost"
-          >
+        <DropdownMenuTrigger asChild className="border-2">
+          <Button className="w-9 h-9 rounded-full" size="icon" variant="ghost">
             <span className="sr-only">Theme selector</span>
             {!hydrated ? null : theme === "dark" ? (
-              <MoonIcon />
+              <MoonIcon className="text-brandGold hover:text-background" />
             ) : theme === "light" ? (
-              <SunIcon />
+              <SunIcon className="text-brandGold hover:text-background" />
             ) : (
-              <LaptopIcon />
+              <LaptopIcon className="text-brandGold hover:text-background" />
             )}
           </Button>
         </DropdownMenuTrigger>

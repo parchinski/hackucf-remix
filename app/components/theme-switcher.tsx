@@ -39,9 +39,11 @@ export function ThemeSwitcherScript() {
         __html: `
           (function() {
             var theme = localStorage.getItem("theme");
-            if (theme) {
-              document.documentElement.setAttribute("data-theme", theme);
+            if (!theme) {
+              theme = "dark";
+              localStorage.setItem("theme", theme);
             }
+            document.documentElement.setAttribute("data-theme", theme);
           })();
         `,
       }}
