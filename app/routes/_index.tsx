@@ -1,6 +1,6 @@
-import { Link } from "@remix-run/react";
-import { Instagram, Twitter, Github, Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Link } from '@remix-run/react';
+import { Instagram, Twitter, Github, Linkedin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -8,78 +8,78 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import HackerBg from "@/components/ui/hacker-bg";
+} from '@/components/ui/card';
+import HackerBg from '@/components/ui/hacker-bg';
 
 export default function Index() {
   const CARD_DATA = [
     {
-      id: "meetings",
-      title: "Meetings",
+      id: 'meetings',
+      title: 'Meetings',
       description:
-        "We hold meetings during the fall and spring semesters. Topics range from current events to security software tools and even hardware. Often special guests from various businesses and organizations will present on advanced special topics like reverse engineering and exploitation.",
-      buttonText: "View Our Calendar",
-      imageURL: "/meetings.jpg",
+        'We hold meetings during the fall and spring semesters. Topics range from current events to security software tools and even hardware. Often special guests from various businesses and organizations will present on advanced special topics like reverse engineering and exploitation.',
+      buttonText: 'View Our Calendar',
+      imageURL: '/meetings.jpg',
     },
     {
-      id: "cyber-teams",
-      title: "Cyber Teams",
+      id: 'cyber-teams',
+      title: 'Cyber Teams',
       description:
         "One component of the club involves applying defensive security strategies in order to rigorously protect computers from being compromised. Our competition teams are dedicated to learning the 'ins and outs' of administering and hardening systems to defend against some of today's leading threats.",
-      buttonText: "About CCDC",
-      imageURL: "/cyber-teams.jpg",
+      buttonText: 'About CCDC',
+      imageURL: '/cyber-teams.jpg',
     },
     {
-      id: "cyber-games",
-      title: "Cyber Games",
+      id: 'cyber-games',
+      title: 'Cyber Games',
       description:
-        "A second component of the club involves learning how attackers leverage exploits and gain control of systems. At our CTF competitions, students have the opportunity to research, explore, and exploit vulnerabilities. Through collaborating on thought-provoking games and challenges, club members are able to learn the skills necessary to becoming a security professional.",
-      buttonText: "About CTFs",
-      imageURL: "/cyber-games.jpg",
+        'A second component of the club involves learning how attackers leverage exploits and gain control of systems. At our CTF competitions, students have the opportunity to research, explore, and exploit vulnerabilities. Through collaborating on thought-provoking games and challenges, club members are able to learn the skills necessary to becoming a security professional.',
+      buttonText: 'About CTFs',
+      imageURL: '/cyber-games.jpg',
     },
     {
-      id: "membership",
-      title: "Membership",
+      id: 'membership',
+      title: 'Membership',
       description:
         "If you like breaking stuff, problem solving, hacker-talk, or even just expressing your true 1337ness, then you definitely want to get involved. It is so neat to be around people with the same interests. It is at our meetings, competitions, and special events that we encourage you to unleash your inner nerd. Joining is a breeze. Don't skip out.",
-      buttonText: "Join Now",
-      imageURL: "/membership.jpg",
+      buttonText: 'Join Now',
+      imageURL: '/membership.jpg',
     },
   ];
 
   const SOCIAL_LINKS = [
     {
-      id: "instagram",
+      id: 'instagram',
       icon: <Instagram className="h-6 w-6" />,
-      url: "https://www.instagram.com",
-      label: "Instagram",
+      url: 'https://www.instagram.com',
+      label: 'Instagram',
     },
     {
-      id: "twitter",
+      id: 'twitter',
       icon: <Twitter className="h-6 w-6" />,
-      url: "https://www.twitter.com",
-      label: "Twitter",
+      url: 'https://www.twitter.com',
+      label: 'Twitter',
     },
     {
-      id: "github",
+      id: 'github',
       icon: <Github className="h-6 w-6" />,
-      url: "https://www.github.com",
-      label: "GitHub",
+      url: 'https://www.github.com',
+      label: 'GitHub',
     },
     {
-      id: "linkedin",
+      id: 'linkedin',
       icon: <Linkedin className="h-6 w-6" />,
-      url: "https://www.linkedin.com",
-      label: "LinkedIn",
+      url: 'https://www.linkedin.com',
+      label: 'LinkedIn',
     },
   ];
 
   const ACTION_LINKS = [
-    { id: "join-the-fun", text: "Join the Fun", url: "#" },
-    { id: "hop-on-discord", text: "Hop on Discord", url: "#" },
-    { id: "view-the-calendar", text: "View the Calendar", url: "#" },
-    { id: "present-at-meeting", text: "Present at a Meeting", url: "#" },
-    { id: "join-mailing-list", text: "Join the Mailing List", url: "#" },
+    { id: 'join-the-fun', text: 'Join the Fun', url: '#' },
+    { id: 'hop-on-discord', text: 'Hop on Discord', url: '#' },
+    { id: 'view-the-calendar', text: 'View the Calendar', url: '#' },
+    { id: 'present-at-meeting', text: 'Present at a Meeting', url: '#' },
+    { id: 'join-mailing-list', text: 'Join the Mailing List', url: '#' },
   ];
 
   return (
@@ -114,7 +114,7 @@ export default function Index() {
         id="meetings"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr">
-          {CARD_DATA.map((card) => (
+          {CARD_DATA.map(card => (
             <Card
               key={card.id}
               className="bg-background border-brandGold flex flex-col mt-12 border-2 pb-3"
@@ -164,7 +164,7 @@ export default function Index() {
             Don't forget to join our Discord!
           </p>
           <div className="flex justify-center space-x-6">
-            {SOCIAL_LINKS.map((social) => (
+            {SOCIAL_LINKS.map(social => (
               <a
                 key={social.id}
                 href={social.url}
@@ -179,7 +179,7 @@ export default function Index() {
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
-          {ACTION_LINKS.map((action) => (
+          {ACTION_LINKS.map(action => (
             <Link
               key={action.id}
               to={action.url}

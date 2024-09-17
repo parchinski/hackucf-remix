@@ -1,66 +1,66 @@
-import { Link } from "@remix-run/react";
-import { Button } from "@/components/ui/button";
+import { Link } from '@remix-run/react';
+import { Button } from '@/components/ui/button';
 
 const NAV_LINKS = [
-  { id: "competitions", name: "Competitions", href: "/competitions" },
-  { id: "ctf", name: "Capture The Flag Competitions", href: "/ctf" },
-  { id: "ccdc", name: "CCDC Competition", href: "/ccdc" },
-  { id: "faq", name: "FAQ", href: "/faq" },
-  { id: "constitution", name: "Constitution", href: "/constitution" },
+  { id: 'competitions', name: 'Competitions', href: '/competitions' },
+  { id: 'ctf', name: 'Capture The Flag Competitions', href: '/ctf' },
+  { id: 'ccdc', name: 'CCDC Competition', href: '/ccdc' },
+  { id: 'faq', name: 'FAQ', href: '/faq' },
+  { id: 'constitution', name: 'Constitution', href: '/constitution' },
 ];
 
 const PARTNER_LINKS = [
-  { id: "citrussec", name: "Citrussec", href: "https://www.citrussec.com/" },
+  { id: 'citrussec', name: 'Citrussec', href: 'https://www.citrussec.com/' },
   {
-    id: "knighthacks",
-    name: "KnightHacks",
-    href: "https://club.knighthacks.org/",
+    id: 'knighthacks',
+    name: 'KnightHacks',
+    href: 'https://club.knighthacks.org/',
   },
   {
-    id: "cybersecurity-club-fsu",
-    name: "Cybersecurity Club @ FSU",
-    href: "https://cybersecurity.fsu.edu/club/",
+    id: 'cybersecurity-club-fsu',
+    name: 'Cybersecurity Club @ FSU',
+    href: 'https://cybersecurity.fsu.edu/club/',
   },
   {
-    id: "whitehatters",
+    id: 'whitehatters',
     name: "USF's WhiteHatters",
-    href: "https://wcsc.info/",
+    href: 'https://wcsc.info/',
   },
   {
-    id: "kernel-sanders",
+    id: 'kernel-sanders',
     name: "UF's Kernel Sanders",
-    href: "https://ufsit.club/",
+    href: 'https://ufsit.club/',
   },
   {
-    id: "florida-poly-cyber-club",
+    id: 'florida-poly-cyber-club',
     name: "Florida Poly's Cyber Club",
-    href: "https://floridapoly.presence.io/organization/cybersecurity-club",
+    href: 'https://floridapoly.presence.io/organization/cybersecurity-club',
   },
   {
-    id: "cyberpatriot",
-    name: "CyberPatriot",
-    href: "https://www.uscyberpatriot.org/home",
+    id: 'cyberpatriot',
+    name: 'CyberPatriot',
+    href: 'https://www.uscyberpatriot.org/home',
   },
   {
-    id: "florida-cyber-alliance",
-    name: "Florida Cyber Alliance",
-    href: "https://www.floridacyberalliance.org/",
+    id: 'florida-cyber-alliance',
+    name: 'Florida Cyber Alliance',
+    href: 'https://www.floridacyberalliance.org/',
   },
   {
-    id: "isc2-central-florida",
-    name: "(ISC)² Central Florida Chapter",
-    href: "https://isc2orlando.org/",
+    id: 'isc2-central-florida',
+    name: '(ISC)² Central Florida Chapter',
+    href: 'https://isc2orlando.org/',
   },
   {
-    id: "owasp-orlando",
-    name: "OWASP Orlando",
-    href: "https://owasp.org/www-chapter-orlando/",
+    id: 'owasp-orlando',
+    name: 'OWASP Orlando',
+    href: 'https://owasp.org/www-chapter-orlando/',
   },
-  { id: "sparsa", name: "SPARSA", href: "https://www.sparsa.org/" },
+  { id: 'sparsa', name: 'SPARSA', href: 'https://www.sparsa.org/' },
   {
-    id: "electronic-frontier-alliance",
-    name: "Electronic Frontier Alliance",
-    href: "https://www.eff.org/fight/",
+    id: 'electronic-frontier-alliance',
+    name: 'Electronic Frontier Alliance',
+    href: 'https://www.eff.org/fight/',
   },
 ];
 
@@ -74,7 +74,7 @@ export default function AboutUs() {
         <nav className="bg-black mb-16">
           <div className="container mx-auto px-4">
             <ul className="flex flex-wrap justify-center gap-4">
-              {NAV_LINKS.map((link) => (
+              {NAV_LINKS.map(link => (
                 <li key={link.id}>
                   <Link to={link.href}>
                     <Button
@@ -122,10 +122,10 @@ export default function AboutUs() {
             </p>
             <p>
               The official name, Collegiate Cyber Defense Club, stems from the
-              similarly named{" "}
+              similarly named{' '}
               <Link to="#" className="text-brandGold hover:underline">
                 Collegiate Cyber Defense Competition
-              </Link>{" "}
+              </Link>{' '}
               (CCDC). It should be no surprise that we participate in this
               competition; however, that is not all we do. With over 400+
               members to date, we continue to bring that much-needed
@@ -148,11 +148,11 @@ export default function AboutUs() {
               <li>Take special trips to various companies</li>
             </ul>
             <p>
-              For more information, choose a path:{" "}
+              For more information, choose a path:{' '}
               <Link to="#" className="text-brandGold hover:underline">
                 Defensive Security
-              </Link>{" "}
-              or{" "}
+              </Link>{' '}
+              or{' '}
               <Link to="#" className="text-brandGold hover:underline">
                 Offensive Security
               </Link>
@@ -177,10 +177,10 @@ export default function AboutUs() {
             <li>KnightSec</li>
           </ul>
           <p className="mt-4">
-            Check out our{" "}
+            Check out our{' '}
             <Link to="/faq" className="text-brandGold hover:underline">
               frequently asked questions
-            </Link>{" "}
+            </Link>{' '}
             for more information about us.
           </p>
         </section>
@@ -191,7 +191,7 @@ export default function AboutUs() {
             Our Allies
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {PARTNER_LINKS.map((ally) => (
+            {PARTNER_LINKS.map(ally => (
               <a
                 key={ally.id}
                 href={ally.href}

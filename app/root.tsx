@@ -6,16 +6,16 @@ import {
   ScrollRestoration,
   isRouteErrorResponse,
   useRouteError,
-} from "@remix-run/react";
+} from '@remix-run/react';
 
-import { GlobalPendingIndicator } from "@/components/global-pending-indicator";
-import { Header } from "@/components/header";
+import { GlobalPendingIndicator } from '@/components/global-pending-indicator';
+import { Header } from '@/components/header';
 import {
   ThemeSwitcherSafeHTML,
   ThemeSwitcherScript,
-} from "@/components/theme-switcher";
+} from '@/components/theme-switcher';
 
-import "./globals.css";
+import './globals.css';
 
 function App({ children }: { children: React.ReactNode }) {
   return (
@@ -53,12 +53,12 @@ export default function Root() {
 export function ErrorBoundary() {
   const error = useRouteError();
   let status = 500;
-  let message = "An unexpected error occurred.";
+  let message = 'An unexpected error occurred.';
   if (isRouteErrorResponse(error)) {
     status = error.status;
     switch (error.status) {
       case 404:
-        message = "Page Not Found";
+        message = 'Page Not Found';
         break;
     }
   } else {

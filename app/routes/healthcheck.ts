@@ -1,8 +1,8 @@
 export function loader() {
-  return new Response("OK", {
+  return new Response('OK', {
     status: 200,
     headers: {
-      "Content-Type": "text/plain",
+      'Content-Type': 'text/plain',
     },
   });
 }

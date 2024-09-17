@@ -1,27 +1,27 @@
-import { useState } from "react";
-import { Link } from "@remix-run/react";
-import { Menu } from "lucide-react";
+import { useState } from 'react';
+import { Link } from '@remix-run/react';
+import { Menu } from 'lucide-react';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { ThemeToggle } from "@/components/theme-toggle";
+} from '@/components/ui/sheet';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const NAV_ITEMS = [
-  { id: "about-us", name: "About Us", href: "/about-us" },
-  { id: "contact-us", name: "Contact Us", href: "/contact-us" },
-  { id: "sponsorship", name: "Sponsorship", href: "/sponsorship" },
-  { id: "calendar", name: "Calendar", href: "/calendar" },
-  { id: "wicys", name: "WiCyS", href: "/wicys" },
+  { id: 'about-us', name: 'About Us', href: '/about-us' },
+  { id: 'contact-us', name: 'Contact Us', href: '/contact-us' },
+  { id: 'sponsorship', name: 'Sponsorship', href: '/sponsorship' },
+  { id: 'calendar', name: 'Calendar', href: '/calendar' },
+  { id: 'wicys', name: 'WiCyS', href: '/wicys' },
   {
-    id: "horse-plinko",
-    name: "Horse Plinko Cyber Challenge",
-    href: "https://plinko.horse",
+    id: 'horse-plinko',
+    name: 'Horse Plinko Cyber Challenge',
+    href: 'https://plinko.horse',
   },
 ];
 
@@ -44,8 +44,8 @@ export function Header() {
 
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex space-x-4 mx-2">
-        {NAV_ITEMS.map((item) =>
-          item.href.startsWith("http") ? (
+        {NAV_ITEMS.map(item =>
+          item.href.startsWith('http') ? (
             <a
               key={item.id}
               href={item.href}
@@ -100,8 +100,8 @@ export function Header() {
               <SheetTitle className="text-2xl text-brandGold">Menu</SheetTitle>
             </SheetHeader>
             <div className="flex flex-col mt-8 space-y-4">
-              {NAV_ITEMS.map((item) =>
-                item.href.startsWith("http") ? (
+              {NAV_ITEMS.map(item =>
+                item.href.startsWith('http') ? (
                   <a
                     key={item.id}
                     href={item.href}
