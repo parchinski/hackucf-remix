@@ -66,12 +66,12 @@ const PARTNER_LINKS = [
 
 export default function AboutUs() {
   return (
-    <main className="bg-black text-white min-h-screen mt-20 px-8">
-      <div className="container mx-auto px-4 py-16">
+    <main className="bg-background text-white min-h-screen mt-20 px-8">
+      <div className="container mx-auto max-w-6xl py-16">
         <h1 className="text-5xl font-bold mb-16 text-center">About Us</h1>
 
         {/* Navigation Links */}
-        <nav className="bg-black mb-16">
+        <nav className="bg-background mb-16">
           <div className="container mx-auto px-4">
             <ul className="flex flex-wrap justify-center gap-4">
               {NAV_LINKS.map(link => (
@@ -79,7 +79,7 @@ export default function AboutUs() {
                   <Link to={link.href}>
                     <Button
                       variant="outline"
-                      className="border-2 bg-black hover:bg-brandGold text-lg hover:text-black border-brandGold text-brandGold rounded-full p-4"
+                      className="border-2 bg-background hover:bg-brandGold text-lg hover:text-background border-brandGold text-brandGold rounded-full p-4"
                     >
                       {link.name}
                     </Button>
@@ -199,8 +199,8 @@ export default function AboutUs() {
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className="bg-black border-2 border-brandGold p-4 rounded-lg hover:bg-brandGold transition-colors group">
-                  <span className="text-brandGold group-hover:text-black transition-colors whitespace-nowrap">
+                <div className="bg-background border-2 border-brandGold p-4 rounded-lg hover:bg-brandGold transition-colors group">
+                  <span className="text-brandGold group-hover:text-background transition-colors whitespace-nowrap">
                     {ally.name}
                   </span>
                 </div>

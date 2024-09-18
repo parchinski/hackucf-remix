@@ -22,8 +22,8 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-        brandGold:"#D2990B",
-        brandGoldHover:"#e6b800",
+				brandGold:"#D2990B",
+				brandGoldHover:"#e6b800",
 				border: lightDarkVar("border"),
 				input: lightDarkVar("input"),
 				ring: lightDarkVar("ring"),
