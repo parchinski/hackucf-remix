@@ -10,6 +10,7 @@ import {
 
 import { GlobalPendingIndicator } from '@/components/global-pending-indicator';
 import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 import {
   ThemeSwitcherSafeHTML,
   ThemeSwitcherScript,
@@ -35,6 +36,7 @@ function App({ children }: { children: React.ReactNode }) {
         <GlobalPendingIndicator />
         <Header />
         {children}
+        <Footer />
         <ScrollRestoration />
         <Scripts />
       </body>

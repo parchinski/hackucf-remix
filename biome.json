@@ -4,12 +4,19 @@
 		"ignore": ["build/**"]
 	},
 	"organizeImports": {
-		"enabled": true
+		"enabled": false 
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"indentStyle": "space",
+			"arrowParentheses": "asNeeded"
 		}
 	}
 }

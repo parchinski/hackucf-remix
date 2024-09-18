@@ -40,7 +40,7 @@ const STATISTICS = [
 
 export default function Competitions() {
   return (
-    <main className="min-h-screen p-8 bg-background text-foreground py-32">
+    <main className="min-h-screen p-8 bg-background text-foreground pt-32">
       <div className="max-w-6xl mx-auto">
         <h1 className="mb-4 text-5xl font-bold">Competitions</h1>
         <p className="mb-12 text-xl">
@@ -81,9 +81,17 @@ export default function Competitions() {
           </h2>
           <Accordion type="single" collapsible className="w-full">
             {FAQ_ITEMS.map(item => (
-              <AccordionItem key={item.id} value={item.id}>
-                <AccordionTrigger>{item.question}</AccordionTrigger>
-                <AccordionContent>{item.answer}</AccordionContent>
+              <AccordionItem
+                className="border border-brandGold rounded-lg my-4"
+                key={item.id}
+                value={item.id}
+              >
+                <AccordionTrigger className="px-4 py-2 hover:bg-brandGold hover:text-background rounded-md transition-colors">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-4 py-2">
+                  {item.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

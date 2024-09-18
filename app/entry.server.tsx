@@ -4,10 +4,10 @@
  * For more information, see https://remix.run/file-conventions/entry.server
  */
 
-import type { AppLoadContext, EntryContext } from "@remix-run/cloudflare";
-import { RemixServer } from "@remix-run/react";
-import { isbot } from "isbot";
-import ReactDOM from "react-dom/server";
+import type { AppLoadContext, EntryContext } from '@remix-run/cloudflare';
+import { RemixServer } from '@remix-run/react';
+import { isbot } from 'isbot';
+import ReactDOM from 'react-dom/server';
 
 export default async function handleRequest(
   request: Request,
@@ -21,7 +21,7 @@ export default async function handleRequest(
 ) {
   let status = responseStatusCode;
   const headers = new Headers(responseHeaders);
-  headers.set("Content-Type", "text/html, charset=utf-8");
+  headers.set('Content-Type', 'text/html, charset=utf-8');
 
   const body = await ReactDOM.renderToReadableStream(
     <RemixServer context={remixContext} url={request.url} />,
@@ -35,7 +35,7 @@ export default async function handleRequest(
     },
   );
 
-  if (isbot(request.headers.get("user-agent") || "")) {
+  if (isbot(request.headers.get('user-agent') || '')) {
     await body.allReady;
   }
 

@@ -2,7 +2,7 @@ import { Link } from '@remix-run/react';
 
 export default function CaptureTheFlag() {
   return (
-    <main className="min-h-screen py-32 px-8 bg-background text-foreground">
+    <main className="min-h-screen p-8 bg-background text-foreground pt-32">
       <div className="max-w-6xl mx-auto">
         <h1 className="mb-4 text-5xl font-bold">Capture the Flag</h1>
         <p className="mb-12 text-xl">

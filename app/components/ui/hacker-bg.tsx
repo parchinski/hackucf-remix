@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 interface HackerBackgroundProps {
   color?: string;
@@ -8,9 +8,9 @@ interface HackerBackgroundProps {
 }
 
 const HackerBackground: React.FC<HackerBackgroundProps> = ({
-  color = "#D2990B",
+  color = '#D2990B',
   fontSize = 14,
-  className = "",
+  className = '',
   speed = 1,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -19,7 +19,7 @@ const HackerBackground: React.FC<HackerBackgroundProps> = ({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const resizeCanvas = () => {
@@ -28,7 +28,7 @@ const HackerBackground: React.FC<HackerBackgroundProps> = ({
     };
 
     resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
 
     let animationFrameId: number;
 
@@ -36,7 +36,7 @@ const HackerBackground: React.FC<HackerBackgroundProps> = ({
     const drops: number[] = new Array(columns).fill(1);
 
     const chars =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_+";
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_+';
 
     let lastTime = 0;
     const interval = 33; // ~30 fps
@@ -47,7 +47,7 @@ const HackerBackground: React.FC<HackerBackgroundProps> = ({
       if (currentTime - lastTime < interval) return;
       lastTime = currentTime;
 
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       ctx.fillStyle = color;
@@ -67,7 +67,7 @@ const HackerBackground: React.FC<HackerBackgroundProps> = ({
     animationFrameId = requestAnimationFrame(draw);
 
     return () => {
-      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
   }, [color, fontSize, speed]);
@@ -77,11 +77,11 @@ const HackerBackground: React.FC<HackerBackgroundProps> = ({
       ref={canvasRef}
       className={`pointer-events-none ${className}`}
       style={{
-        position: "absolute",
+        position: 'absolute',
         top: 0,
         left: 0,
-        width: "100%",
-        height: "100%",
+        width: '100%',
+        height: '100%',
       }}
     />
   );
