@@ -40,10 +40,10 @@ const STATISTICS = [
 
 export default function Competitions() {
   return (
-    <main className="min-h-screen p-8 bg-background text-foreground py-40">
+    <main className="min-h-screen p-8 bg-background text-foreground py-32">
       <div className="max-w-6xl mx-auto">
-        <h1 className="mb-4 text-4xl font-bold">Competitions</h1>
-        <p className="mb-8">
+        <h1 className="mb-4 text-5xl font-bold">Competitions</h1>
+        <p className="mb-12 text-xl">
           Hack@UCF participates in both offensive and defensive security across
           our two teams, KnightSec and the UCF Collegiate Cybersecurity
           Competition (C3) Team.
@@ -67,7 +67,7 @@ export default function Competitions() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
             {STATISTICS.map(stat => (
-              <div key={stat.id} className="text-center">
+              <div key={stat.id} className="text-center mt-16">
                 <p className="mb-2 text-5xl font-bold">{stat.value}</p>
                 <p className="text-sm">{stat.label}</p>
               </div>
