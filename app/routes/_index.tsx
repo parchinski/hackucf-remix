@@ -89,7 +89,7 @@ export default function Index() {
         className="h-screen flex items-center justify-center p-8 bg-background relative scroll-mt-16"
         id="home"
       >
-        <HackerBg className="absolute inset-0 w-full h-full bg-background" />
+        <HackerBg className="absolute inset-0 w-full h-full" />
         <div className="max-w-4xl text-center z-10 mt-16">
           <h1 className="text-5xl font-bold mb-4 bg-white text-transparent bg-clip-text drop-shadow-md py-1">
             Collegiate Cyber Defense Club at UCF
