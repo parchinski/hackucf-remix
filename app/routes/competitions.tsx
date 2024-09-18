@@ -73,9 +73,6 @@ export default function Competitions() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-muted-foreground text-right">
-            Source: CTFTime, Updated September 2022
-          </p>
         </section>
 
         <section className="mb-12">

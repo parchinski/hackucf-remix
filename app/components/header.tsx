@@ -76,7 +76,14 @@ export function Header() {
         >
           Join Our Discord
         </Button>
-        <ThemeToggle />
+        <div className="flex items-center">
+          <div className="lg:hidden mr-2">
+            <ThemeToggle />
+          </div>
+          <div className="hidden lg:block">
+            <ThemeToggle />
+          </div>
+        </div>
 
         {/* Mobile Menu Trigger */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
