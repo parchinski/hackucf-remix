@@ -25,3 +25,5 @@ In the Cloudflare Dashboard:
 - Create a new Cloudflare Pages application
 - Set the `Build command` to `npm run build`
 - Set the `Build output directory` to `/build/client`
+
+## This should not use anything other than npm
