@@ -43,7 +43,7 @@ export function Header() {
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="hidden lg:flex space-x-4 mx-2">
+      <nav className="hidden lg:flex space-x-2 mx-2">
         {NAV_ITEMS.map(item =>
           item.href.startsWith('http') ? (
             <a
