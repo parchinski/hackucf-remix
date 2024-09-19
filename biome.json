@@ -18,5 +18,10 @@
 			"indentStyle": "space",
 			"arrowParentheses": "asNeeded"
 		}
+	},
+	"css": {
+		"formatter": {
+			"indentStyle": "space"
+		}
 	}
 }
