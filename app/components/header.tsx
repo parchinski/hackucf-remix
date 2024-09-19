@@ -46,15 +46,16 @@ export function Header() {
       <nav className="hidden lg:flex space-x-2 mx-2">
         {NAV_ITEMS.map(item =>
           item.href.startsWith('http') ? (
-            <a
+            <Button
               key={item.id}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              variant="ghost"
+              asChild
               className="text-white hover:text-background hover:bg-white transition-colors text-sm px-2 py-2 rounded-md whitespace-nowrap"
             >
-              {item.name}
-            </a>
+              <a href={item.href} target="_blank" rel="noopener noreferrer">
+                {item.name}
+              </a>
+            </Button>
           ) : (
             <Link
               key={item.id}
@@ -109,16 +110,21 @@ export function Header() {
             <div className="flex flex-col mt-8 space-y-4">
               {NAV_ITEMS.map(item =>
                 item.href.startsWith('http') ? (
-                  <a
+                  <Button
                     key={item.id}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    variant="ghost"
+                    asChild
                     onClick={() => setIsOpen(false)}
                     className="w-full text-left text-sm text-white hover:text-background hover:bg-white transition-colors px-3 py-2 rounded-md"
                   >
-                    {item.name}
-                  </a>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {item.name}
+                    </a>
+                  </Button>
                 ) : (
                   <Link
                     key={item.id}
