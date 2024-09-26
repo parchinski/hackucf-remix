@@ -100,7 +100,9 @@ export function Header() {
             className="w-[300px] sm:w-[400px] bg-background"
           >
             <SheetHeader>
-              <SheetTitle className="text-2xl text-brandGold">Menu</SheetTitle>
+              <SheetTitle className="text-3xl font-bold text-brandGold">
+                Menu
+              </SheetTitle>
             </SheetHeader>
             <div className="flex flex-col mt-8 space-y-4">
               {NAV_ITEMS.map(item => (

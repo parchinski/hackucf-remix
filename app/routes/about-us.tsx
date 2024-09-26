@@ -200,7 +200,7 @@ export default function AboutUs() {
                 rel="noopener noreferrer"
                 className="block"
               >
-                <div className="bg-background border-2 border-brandGold p-4 rounded-lg hover:bg-brandGold transition-colors group">
+                <div className="bg-background border-2 border-brandGold p-4 rounded-lg hover:bg-brandGold transition-colors group overflow-hidden">
                   <span className="text-brandGold group-hover:text-background transition-colors whitespace-nowrap">
                     {ally.name}
                   </span>

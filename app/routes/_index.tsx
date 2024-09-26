@@ -99,6 +99,7 @@ export default function Index() {
                     src={card.imageURL}
                     alt={`${card.title}`}
                     sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
