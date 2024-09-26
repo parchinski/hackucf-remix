@@ -32,8 +32,9 @@ const HackerBackground: React.FC<HackerBackgroundProps> = ({
 
     let animationFrameId: number;
 
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops: number[] = new Array(columns).fill(1);
+    // Recalculate columns and drops after resizing
+    let columns = Math.floor(canvas.width / fontSize);
+    let drops: number[] = new Array(columns).fill(1);
 
     const chars =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_+';
@@ -66,16 +67,32 @@ const HackerBackground: React.FC<HackerBackgroundProps> = ({
 
     animationFrameId = requestAnimationFrame(draw);
 
+    // Update columns and drops when the window is resized
+    const handleResize = () => {
+      resizeCanvas();
+      columns = Math.floor(canvas.width / fontSize);
+      drops = new Array(columns).fill(1);
+    };
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameId);
     };
   }, [color, fontSize, speed]);
+
+  // Set default width and height to prevent hydration mismatch
+  const defaultWidth = 800;
+  const defaultHeight = 600;
 
   return (
     <canvas
       ref={canvasRef}
       className={`pointer-events-none ${className}`}
+      width={defaultWidth}
+      height={defaultHeight}
       style={{
         position: 'absolute',
         top: 0,

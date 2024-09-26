@@ -43,14 +43,14 @@ export function Header() {
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="hidden lg:flex space-x-2 mx-2">
+      <nav className="hidden lg:flex space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-5 xl:space-x-6 2xl:space-x-8 mx-2">
         {NAV_ITEMS.map(item =>
           item.href.startsWith('http') ? (
             <Button
               key={item.id}
               variant="ghost"
               asChild
-              className="text-white hover:text-background hover:bg-white transition-colors text-sm px-2 py-2 rounded-md whitespace-nowrap"
+              className="text-white hover:text-background hover:bg-white transition-colors text-sm px-2 py-2 sm:px-3 sm:py-2.5 md:px-4 lg:px-5 xl:px-6 rounded-md whitespace-nowrap"
             >
               <a href={item.href} target="_blank" rel="noopener noreferrer">
                 {item.name}
@@ -61,7 +61,7 @@ export function Header() {
               key={item.id}
               to={item.href}
               prefetch="intent"
-              className="text-white hover:text-background hover:bg-white transition-colors text-sm px-2 py-2 rounded-md whitespace-nowrap"
+              className="text-white hover:text-background hover:bg-white transition-colors text-sm px-2 py-2 sm:px-3 sm:py-2.5 md:px-4 lg:px-5 xl:px-6 rounded-md whitespace-nowrap"
             >
               {item.name}
             </Link>
@@ -78,7 +78,7 @@ export function Header() {
           Join Our Discord
         </Button>
         <div className="flex items-center">
-          <div className="lg:hidden mr-2">
+          <div className="lg:hidden">
             <ThemeToggle />
           </div>
           <div className="hidden lg:block">

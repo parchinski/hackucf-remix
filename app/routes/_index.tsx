@@ -77,11 +77,15 @@ export default function Index() {
         className="min-h-screen flex flex-col justify-center bg-background px-4 py-8 scroll-mt-16"
         id="meetings"
       >
+        <h2 className="text-3xl font-bold text-center mb-10 text-brandGold">
+          Club Activities
+        </h2>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr">
           {CARD_DATA.map(card => (
             <Card
               key={card.id}
-              className="bg-background border-brandGold flex flex-col mt-12 border-2 pb-3"
+              className="bg-background border-brandGold flex flex-col border-2 pb-3"
             >
               <CardHeader className="py-3">
                 <CardTitle className="text-brandGold text-lg font-bold">

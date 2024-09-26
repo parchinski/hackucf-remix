@@ -39,51 +39,62 @@ export function Footer() {
 
   return (
     <footer
-      className="min-h-screen flex flex-col justify-center bg-background px-8 scroll-mt-16"
+      className="bg-background text-white py-16 px-4 sm:px-6 lg:px-8"
       id="connect"
     >
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-center mb-10 text-brandGold">
-          Stay Connected
-        </h2>
-        <p className="text-center max-w-2xl mx-auto mb-8 text-white">
-          You can follow us on social media to stay tuned for job and internship
-          opportunities, or get updated when we hold a meeting. Don't forget to
-          join our Discord!
-        </p>
-        <div className="flex justify-center space-x-6">
-          {SOCIAL_LINKS.map(social => (
-            <a
-              key={social.id}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-brandGold hover:bg-brandGoldHover text-background h-12 w-12 flex items-center justify-center rounded-md"
-              aria-label={`Follow us on ${social.label}`}
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-center mb-6 text-brandGold">
+            Stay Connected
+          </h2>
+          <p className="text-center max-w-2xl mx-auto mb-8">
+            You can follow us on social media to stay tuned for job and
+            internship opportunities, or get updated when we hold a meeting.
+            Don't forget to join our Discord!
+          </p>
+          <div className="flex justify-center space-x-6">
+            {SOCIAL_LINKS.map(social => (
+              <a
+                key={social.id}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-brandGold hover:bg-brandGoldHover text-background h-12 w-12 flex items-center justify-center rounded-md transition-colors duration-300"
+                aria-label={`Follow us on ${social.label}`}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {ACTION_LINKS.map(action => (
+            <Link
+              key={action.id}
+              to={action.url}
+              className="bg-background hover:bg-brandGold hover:text-background border-brandGold text-brandGold border-2 py-2 px-4 rounded transition-colors duration-300"
             >
-              {social.icon}
-            </a>
+              {action.text}
+            </Link>
           ))}
         </div>
-      </div>
-      <div className="flex flex-wrap justify-center gap-4">
-        {ACTION_LINKS.map(action => (
-          <Link
-            key={action.id}
-            to={action.url}
-            className="bg-background hover:bg-brandGold hover:text-background border-brandGold text-brandGold border-2 py-2 px-4 rounded"
-          >
-            {action.text}
-          </Link>
-        ))}
-      </div>
-      <div className="mt-12 text-center">
-        <p className="text-brandGold text-lg font-semibold">
-          @HackUCF 2024<sup className="text-xs">TM</sup>
-        </p>
-        <p className="text-white text-xs mt-1">
-          created by: <span className="text-brandGold">bryantpdev</span>
-        </p>
+        <div className="text-center">
+          <p className="text-brandGold font-semibold mb-1">
+            @HackUCF {new Date().getFullYear()}
+            <sup className="text-[0.6rem]">TM</sup>
+          </p>
+          <p className="text-white text-sm">
+            Made with ❤ by{' '}
+            <a
+              href="https://github.com/parchinski"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-brandGold transition-colors duration-300"
+            >
+              bp
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
