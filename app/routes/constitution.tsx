@@ -1,10 +1,11 @@
+import { Link } from '@remix-run/react';
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { Link } from '@remix-run/react';
 
 const CONSTITUTION_ARTICLES = [
   {
@@ -313,6 +314,14 @@ export default function Constitution() {
   return (
     <main className="min-h-screen p-8 bg-background text-foreground pt-32">
       <div className="max-w-6xl mx-auto">
+        <Link
+          to="/about-us"
+          className="block w-full text-center text-brandGold border-brandGold
+          border-2 py-2 rounded-md bg-background hover:bg-brandGold hover:text-background transition-colors mb-8"
+        >
+          About Us
+        </Link>
+
         <h1 className="mb-4 text-5xl font-bold">
           Constitution of Collegiate Cyber Defense Club
         </h1>

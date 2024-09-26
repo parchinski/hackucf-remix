@@ -43,30 +43,25 @@ export function Header() {
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="hidden lg:flex space-x-2 sm:space-x-3 md:space-x-4 lg:space-x-5 xl:space-x-6 2xl:space-x-8 mx-2">
-        {NAV_ITEMS.map(item =>
-          item.href.startsWith('http') ? (
-            <Button
-              key={item.id}
-              variant="ghost"
-              asChild
-              className="text-white hover:text-background hover:bg-white transition-colors text-sm px-2 py-2 sm:px-3 sm:py-2.5 md:px-4 lg:px-5 xl:px-6 rounded-md whitespace-nowrap"
-            >
+      <nav className="hidden lg:flex space-x-1 2xl:space-x-8 mx-2">
+        {NAV_ITEMS.map(item => (
+          <Button
+            key={item.id}
+            variant="ghost"
+            asChild
+            className="text-white hover:text-background hover:bg-white transition-colors text-sm px-2 py-2 sm:px-3 sm:py-2.5 md:px-4 lg:px-5 xl:px-6 rounded-md whitespace-nowrap"
+          >
+            {item.href.startsWith('http') ? (
               <a href={item.href} target="_blank" rel="noopener noreferrer">
                 {item.name}
               </a>
-            </Button>
-          ) : (
-            <Link
-              key={item.id}
-              to={item.href}
-              prefetch="intent"
-              className="text-white hover:text-background hover:bg-white transition-colors text-sm px-2 py-2 sm:px-3 sm:py-2.5 md:px-4 lg:px-5 xl:px-6 rounded-md whitespace-nowrap"
-            >
-              {item.name}
-            </Link>
-          ),
-        )}
+            ) : (
+              <Link to={item.href} prefetch="intent">
+                {item.name}
+              </Link>
+            )}
+          </Button>
+        ))}
       </nav>
 
       {/* Actions */}
@@ -108,15 +103,15 @@ export function Header() {
               <SheetTitle className="text-2xl text-brandGold">Menu</SheetTitle>
             </SheetHeader>
             <div className="flex flex-col mt-8 space-y-4">
-              {NAV_ITEMS.map(item =>
-                item.href.startsWith('http') ? (
-                  <Button
-                    key={item.id}
-                    variant="ghost"
-                    asChild
-                    onClick={() => setIsOpen(false)}
-                    className="w-full text-left text-sm text-white hover:text-background hover:bg-white transition-colors px-3 py-2 rounded-md"
-                  >
+              {NAV_ITEMS.map(item => (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  asChild
+                  onClick={() => setIsOpen(false)}
+                  className="w-full text-left text-sm text-white hover:text-background hover:bg-white transition-colors px-3 py-2 rounded-md"
+                >
+                  {item.href.startsWith('http') ? (
                     <a
                       href={item.href}
                       target="_blank"
@@ -124,19 +119,13 @@ export function Header() {
                     >
                       {item.name}
                     </a>
-                  </Button>
-                ) : (
-                  <Link
-                    key={item.id}
-                    to={item.href}
-                    prefetch="intent"
-                    onClick={() => setIsOpen(false)}
-                    className="w-full text-left text-sm text-white hover:text-background hover:bg-white transition-colors px-3 py-2 rounded-md"
-                  >
-                    {item.name}
-                  </Link>
-                ),
-              )}
+                  ) : (
+                    <Link to={item.href} prefetch="intent">
+                      {item.name}
+                    </Link>
+                  )}
+                </Button>
+              ))}
               <Button
                 variant="outline"
                 className="bg-background border-brandGold text-brandGold hover:bg-brandGold hover:text-background text-sm transition-colors w-full"

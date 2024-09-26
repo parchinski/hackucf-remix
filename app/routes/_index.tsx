@@ -1,4 +1,5 @@
 import { Link } from '@remix-run/react';
+
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -50,7 +51,7 @@ export default function Index() {
     <div className="min-h-screen w-full">
       {/* Home Section */}
       <section
-        className="h-screen flex items-center justify-center p-8 bg-background relative scroll-mt-16"
+        className="h-screen flex items-center justify-center p-8 bg-black relative scroll-mt-16"
         id="home"
       >
         <HackerBg className="absolute inset-0 w-full h-full" />
@@ -97,10 +98,8 @@ export default function Index() {
                   <img
                     src={card.imageURL}
                     alt={`${card.title}`}
-                    width={340}
-                    height={300}
+                    sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
                     className="w-full h-full object-cover"
-                    loading="lazy"
                   />
                 </div>
                 <CardDescription className="text-white text-sm">
