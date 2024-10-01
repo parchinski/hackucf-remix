@@ -23,6 +23,11 @@ const NAV_ITEMS = [
     name: 'Horse Plinko Cyber Challenge',
     href: 'https://plinko.horse',
   },
+  {
+    id: 'writeups',
+    name: 'Writeups',
+    href: 'https://plinko.horse',
+  },
 ];
 
 export function Header() {
