@@ -20,23 +20,18 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   const lastName = formData.get('lastName') as string;
   const message = formData.get('message') as string;
 
-  // Basic validation
   if (typeof email !== 'string' || !email.includes('@')) {
     errors.email = 'Invalid email address';
   }
-
-  if (typeof message !== 'string' || message.length < 12) {
-    errors.message = 'Message should be longer than that';
+  if (typeof message !== 'string' || message.length < 9) {
+    errors.message = 'Message should contain more content';
   }
-
   if (typeof firstName !== 'string' || firstName.trim().length < 1) {
     errors.firstName = 'Enter a valid first name';
   }
-
   if (typeof lastName !== 'string' || lastName.trim().length < 1) {
     errors.lastName = 'Enter a valid last name';
   }
-
   if (Object.keys(errors).length > 0) {
     return json<ActionData>({ errors }, { status: 400 });
   }
@@ -54,28 +49,19 @@ export const action = async ({ request }: ActionFunctionArgs) => {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
     });
-
+    // biome-ignore lint/suspicious/noExplicitAny: only type that really works in this case
     let data: any;
     if (response.headers.get('content-type')?.includes('application/json')) {
       data = await response.json();
     } else {
       data = await response.text();
     }
-
     if (!response.ok) {
       return json<ActionData>(
         { errors: { form: data?.error || 'Failed to submit form' } },
         { status: response.status },
       );
     }
-
-    if (!response.ok) {
-      return json<ActionData>(
-        { errors: { form: data?.error || 'Failed to submit form' } },
-        { status: response.status },
-      );
-    }
-
     return json<ActionData>({ success: true }, { status: 200 });
   } catch (error: unknown) {
     console.error('Error submitting form:', error);
@@ -91,6 +77,13 @@ export default function ContactUs() {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'loading';
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {
     if (actionData?.success) {
@@ -99,6 +92,34 @@ export default function ContactUs() {
       return () => clearTimeout(timer);
     }
   }, [actionData]);
+
+  const validateField = (name: string, value: string) => {
+    if (
+      name === 'email' &&
+      (typeof value !== 'string' || !value.includes('@'))
+    ) {
+      return 'Invalid email address';
+    }
+    if (name === 'message' && (typeof value !== 'string' || value.length < 8)) {
+      return 'Message should contain more content';
+    }
+    if (
+      (name === 'firstName' || name === 'lastName') &&
+      (typeof value !== 'string' || value.trim().length < 1)
+    ) {
+      return `Enter a valid ${name === 'firstName' ? 'first' : 'last'} name`;
+    }
+    return '';
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    const error = validateField(name, value);
+    setErrors(prev => ({ ...prev, [name]: error }));
+  };
 
   return (
     <main className="bg-background text-white min-h-screen mt-20 px-8">
@@ -162,14 +183,16 @@ export default function ContactUs() {
                 name="firstName"
                 placeholder="First Name"
                 className="bg-white text-background"
-                aria-invalid={actionData?.errors?.firstName ? true : undefined}
+                value={formData.firstName}
+                onChange={handleInputChange}
+                aria-invalid={errors.firstName ? true : undefined}
                 aria-errormessage={
-                  actionData?.errors?.firstName ? 'firstName-error' : undefined
+                  errors.firstName ? 'firstName-error' : undefined
                 }
               />
-              {actionData?.errors?.firstName && (
+              {errors.firstName && (
                 <div id="firstName-error" className="text-red-500 text-sm">
-                  {actionData.errors.firstName}
+                  {errors.firstName}
                 </div>
               )}
             </div>
@@ -182,14 +205,16 @@ export default function ContactUs() {
                 name="lastName"
                 placeholder="Last Name"
                 className="bg-white text-background"
-                aria-invalid={actionData?.errors?.lastName ? true : undefined}
+                value={formData.lastName}
+                onChange={handleInputChange}
+                aria-invalid={errors.lastName ? true : undefined}
                 aria-errormessage={
-                  actionData?.errors?.lastName ? 'lastName-error' : undefined
+                  errors.lastName ? 'lastName-error' : undefined
                 }
               />
-              {actionData?.errors?.lastName && (
+              {errors.lastName && (
                 <div id="lastName-error" className="text-red-500 text-sm">
-                  {actionData.errors.lastName}
+                  {errors.lastName}
                 </div>
               )}
             </div>
@@ -203,14 +228,14 @@ export default function ContactUs() {
                 type="email"
                 placeholder="Email"
                 className="bg-white text-background"
-                aria-invalid={actionData?.errors?.email ? true : undefined}
-                aria-errormessage={
-                  actionData?.errors?.email ? 'email-error' : undefined
-                }
+                value={formData.email}
+                onChange={handleInputChange}
+                aria-invalid={errors.email ? true : undefined}
+                aria-errormessage={errors.email ? 'email-error' : undefined}
               />
-              {actionData?.errors?.email && (
+              {errors.email && (
                 <div id="email-error" className="text-red-500 text-sm">
-                  {actionData.errors.email}
+                  {errors.email}
                 </div>
               )}
             </div>
@@ -223,15 +248,15 @@ export default function ContactUs() {
                 name="message"
                 placeholder="Your message"
                 className="bg-white text-background"
-                rows={6}
-                aria-invalid={actionData?.errors?.message ? true : undefined}
-                aria-errormessage={
-                  actionData?.errors?.message ? 'message-error' : undefined
-                }
+                rows={2}
+                value={formData.message}
+                onChange={handleInputChange}
+                aria-invalid={errors.message ? true : undefined}
+                aria-errormessage={errors.message ? 'message-error' : undefined}
               />
-              {actionData?.errors?.message && (
+              {errors.message && (
                 <div id="message-error" className="text-red-500 text-sm">
-                  {actionData.errors.message}
+                  {errors.message}
                 </div>
               )}
             </div>
