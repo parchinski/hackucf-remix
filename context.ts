@@ -1,4 +1,4 @@
-import { AppLoadContext } from '@remix-run/cloudflare';
+import type { AppLoadContext } from '@remix-run/cloudflare';
 
 // biome-ignore lint/suspicious/noEmptyInterface: Fill this in with your own types for your use-case
 export interface Env {}
