@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import HackerBg from '@/components/ui/hacker-bg';
+import ImageCarousel from '@/components/image-carousel';
 
 export default function Index() {
   const CARD_DATA = [
@@ -19,7 +20,12 @@ export default function Index() {
       description:
         'We hold meetings during the fall and spring semesters. Topics range from current events to security software tools and even hardware. Often special guests from various businesses and organizations will present on advanced special topics like reverse engineering and exploitation.',
       buttonText: 'View Our Calendar',
-      imageURL: '/meetings.jpg',
+      imageUrls: [
+        '/meetings0.jpg',
+        '/meetings1.jpg',
+        '/meetings2.jpg',
+        '/meetings3.jpg',
+      ],
     },
     {
       id: 'cyber-teams',
@@ -27,7 +33,12 @@ export default function Index() {
       description:
         "One component of the club involves applying defensive security strategies in order to rigorously protect computers from being compromised. Our competition teams are dedicated to learning the 'ins and outs' of administering and hardening systems to defend against some of today's leading threats.",
       buttonText: 'About CCDC',
-      imageURL: '/cyber-teams.jpg',
+      imageUrls: [
+        '/cyber-teams0.jpg',
+        '/cyber-teams1.jpg',
+        '/cyber-teams2.jpg',
+        '/cyber-teams3.jpg',
+      ],
     },
     {
       id: 'cyber-games',
@@ -35,7 +46,12 @@ export default function Index() {
       description:
         'A second component of the club involves learning how attackers leverage exploits and gain control of systems. At our CTF competitions, students have the opportunity to research, explore, and exploit vulnerabilities. Through collaborating on thought-provoking games and challenges, club members are able to learn the skills necessary to becoming a security professional.',
       buttonText: 'About CTFs',
-      imageURL: '/cyber-games.jpg',
+      imageUrls: [
+        '/cyber-games0.jpg',
+        '/cyber-games1.jpg',
+        '/cyber-games2.jpg',
+        '/cyber-games3.jpg',
+      ],
     },
     {
       id: 'membership',
@@ -43,7 +59,12 @@ export default function Index() {
       description:
         "If you like breaking stuff, problem solving, hacker-talk, or even just expressing your true 1337ness, then you definitely want to get involved. It is so neat to be around people with the same interests. It is at our meetings, competitions, and special events that we encourage you to unleash your inner nerd. Joining is a breeze. Don't skip out.",
       buttonText: 'Join Now',
-      imageURL: '/membership.jpg',
+      imageUrls: [
+        '/membership0.jpg',
+        '/membership1.jpg',
+        '/membership2.jpg',
+        '/membership3.jpg',
+      ],
     },
   ];
 
@@ -94,15 +115,7 @@ export default function Index() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-grow flex flex-col pb-2 space-y-4">
-                <div className="w-full h-auto relative aspect-w-16 aspect-h-9">
-                  <img
-                    src={card.imageURL}
-                    alt={`${card.title}`}
-                    sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <ImageCarousel imagePaths={card.imageUrls} alt={card.title} />
                 <CardDescription className="text-white text-sm">
                   {card.description}
                 </CardDescription>
