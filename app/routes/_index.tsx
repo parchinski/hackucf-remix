@@ -10,69 +10,16 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import HackerBg from '@/components/ui/hacker-bg';
+import BackgroundGrid from '@/components/ui/grid-bg';
 import ImageCarousel from '@/components/image-carousel';
+import { INDEX_CARD_DATA } from '@/lib/cardData';
 
 export default function Index() {
-  const CARD_DATA = [
-    {
-      id: 'meetings',
-      title: 'Meetings',
-      description:
-        'We hold meetings during the fall and spring semesters. Topics range from current events to security software tools and even hardware. Often special guests from various businesses and organizations will present on advanced special topics like reverse engineering and exploitation.',
-      buttonText: 'View Our Calendar',
-      imageUrls: [
-        '/meetings0.jpg',
-        '/meetings1.jpg',
-        '/meetings2.jpg',
-        '/meetings3.jpg',
-      ],
-    },
-    {
-      id: 'cyber-teams',
-      title: 'Cyber Teams',
-      description:
-        "One component of the club involves applying defensive security strategies in order to rigorously protect computers from being compromised. Our competition teams are dedicated to learning the 'ins and outs' of administering and hardening systems to defend against some of today's leading threats.",
-      buttonText: 'About CCDC',
-      imageUrls: [
-        '/cyber-teams0.jpg',
-        '/cyber-teams1.jpg',
-        '/cyber-teams2.jpg',
-        '/cyber-teams3.jpg',
-      ],
-    },
-    {
-      id: 'cyber-games',
-      title: 'Cyber Games',
-      description:
-        'A second component of the club involves learning how attackers leverage exploits and gain control of systems. At our CTF competitions, students have the opportunity to research, explore, and exploit vulnerabilities. Through collaborating on thought-provoking games and challenges, club members are able to learn the skills necessary to becoming a security professional.',
-      buttonText: 'About CTFs',
-      imageUrls: [
-        '/cyber-games0.jpg',
-        '/cyber-games1.jpg',
-        '/cyber-games2.jpg',
-        '/cyber-games3.jpg',
-      ],
-    },
-    {
-      id: 'membership',
-      title: 'Membership',
-      description:
-        "If you like breaking stuff, problem solving, hacker-talk, or even just expressing your true 1337ness, then you definitely want to get involved. It is so neat to be around people with the same interests. It is at our meetings, competitions, and special events that we encourage you to unleash your inner nerd. Joining is a breeze. Don't skip out.",
-      buttonText: 'Join Now',
-      imageUrls: [
-        '/membership0.jpg',
-        '/membership1.jpg',
-        '/membership2.jpg',
-        '/membership3.jpg',
-      ],
-    },
-  ];
-
   return (
-    <div className="min-h-screen w-full">
+    <div className="h-screen w-full overflow-y-auto snap-y snap-mandatory">
       {/* Home Section */}
       <section
-        className="h-screen flex items-center justify-center p-8 bg-black relative scroll-mt-16"
+        className="h-screen w-full flex items-center justify-center p-8 bg-black relative snap-start"
         id="home"
       >
         <HackerBg className="absolute inset-0 w-full h-full" />
@@ -96,25 +43,27 @@ export default function Index() {
 
       {/* Meetings and Membership Section */}
       <section
-        className="min-h-screen flex flex-col justify-center bg-background px-4 py-8 scroll-mt-16"
+        className="h-screen w-full flex flex-col justify-center bg-background px-4 py-8 snap-start relative"
         id="meetings"
+        aria-label="Club Activities section"
       >
-        <h2 className="text-3xl font-bold text-center mb-10 text-brandGold">
+        <BackgroundGrid className="absolute inset-0 w-full h-full" />
+        <h2 className="text-3xl font-bold text-center mb-10 sm:mb-12 md:mb-14 text-brandGold relative z-10">
           Club Activities
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr">
-          {CARD_DATA.map(card => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-fr relative z-10">
+          {INDEX_CARD_DATA.map(card => (
             <Card
               key={card.id}
               className="bg-background border-brandGold flex flex-col border-2 pb-3"
             >
-              <CardHeader className="py-3">
+              <CardHeader className="py-4">
                 <CardTitle className="text-brandGold text-lg font-bold">
                   {card.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow flex flex-col pb-2 space-y-4">
+              <CardContent className="flex-grow flex flex-col pb-4 space-y-4">
                 <ImageCarousel imagePaths={card.imageUrls} alt={card.title} />
                 <CardDescription className="text-white text-sm">
                   {card.description}

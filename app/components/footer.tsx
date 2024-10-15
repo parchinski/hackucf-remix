@@ -39,10 +39,10 @@ export function Footer() {
 
   return (
     <footer
-      className="bg-background text-white py-16 px-4 sm:px-6 lg:px-8"
+      className="bg-background text-white py-16 px-4 sm:px-6 lg:px-8 snap-end h-screen"
       id="connect"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto mt-40 flex-col items-center justify-center h-full">
         <div className="mb-12">
           <h2 className="text-3xl font-bold text-center mb-6 text-brandGold">
             Stay Connected
