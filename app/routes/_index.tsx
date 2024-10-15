@@ -70,7 +70,7 @@ export default function Index() {
         aria-label="Club Activities section"
       >
         <BackgroundGrid className="absolute inset-0 w-full h-full" />
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-white relative z-10">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mt-8 mb-6 text-white relative z-10">
           Club Activities
         </h2>
 
