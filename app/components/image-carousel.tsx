@@ -38,8 +38,8 @@ export default function ImageCarousel({ imagePaths, alt }: ImageCarouselProps) {
               src={`/${image}`}
               alt={`${alt} ${index + 1}`}
               layout="constrained"
-              width={1600}
-              height={900}
+              width={1112}
+              height={834}
               className="w-full h-auto"
               priority={index === 0}
               loading={index === 0 ? 'eager' : 'lazy'}

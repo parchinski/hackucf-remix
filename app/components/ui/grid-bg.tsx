@@ -1,3 +1,4 @@
+'use client';
 import type { HTMLProps } from 'react';
 
 interface BackgroundGridProps {
@@ -18,7 +19,7 @@ const BackgroundGrid = ({
 }: Partial<BackgroundGridProps> & HTMLProps<HTMLDivElement>) => {
   const svg = `
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' stroke='${color}' stroke-width='${strokeWidth}' fill-opacity='0.4' >
-      <path d='M 100 200 L 100 0'/>
+      <path d='M 100 0 L 100 200'/>
       <path d='M 0 100 L 200 100'/>
     </svg>
   `;
@@ -32,10 +33,10 @@ const BackgroundGrid = ({
         backgroundRepeat: 'repeat',
         backgroundSize: cellSize,
         maskImage: fade
-          ? 'radial-gradient(ellipse at bottom, white, transparent 70%)'
+          ? 'radial-gradient(ellipse at top, white, transparent 70%)'
           : undefined,
         WebkitMaskImage: fade
-          ? 'radial-gradient(ellipse at bottom, white, transparent 70%)'
+          ? 'radial-gradient(ellipse at top, white, transparent 70%)'
           : undefined,
       }}
       {...props}

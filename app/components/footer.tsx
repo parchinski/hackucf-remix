@@ -39,15 +39,15 @@ export function Footer() {
 
   return (
     <footer
-      className="bg-background text-white py-16 px-4 sm:px-6 lg:px-8 snap-end h-screen"
+      className="bg-background text-white px-4 sm:px-6 lg:px-8 mb-16"
       id="connect"
     >
-      <div className="max-w-7xl mx-auto mt-40 flex-col items-center justify-center h-full">
+      <div className="max-w-7xl mx-auto flex-col items-center justify-center h-full">
         <div className="mb-12">
-          <h2 className="text-3xl font-bold text-center mb-6 text-brandGold">
+          <h2 className="text-4xl font-bold text-center mb-6 text-white">
             Stay Connected
           </h2>
-          <p className="text-center max-w-2xl mx-auto mb-8">
+          <p className="text-center max-w-2xl mx-auto mb-8 text-white">
             You can follow us on social media to stay tuned for job and
             internship opportunities, or get updated when we hold a meeting.
             Don't forget to join our Discord!
