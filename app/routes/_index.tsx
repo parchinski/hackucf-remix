@@ -24,7 +24,7 @@ function ScrollArrow({ onClick }: { onClick: () => void }) {
       className="absolute bottom-8 left-3/6 transform -translate-x-1/2 animate-bounce transition-colors duration-600 ease-in-out hover:text-brandGoldHover focus:outline-none focus:ring-2 focus:ring-brandGold focus:ring-opacity-50 rounded-full p-2"
       aria-label="Scroll to next section"
     >
-      <ChevronDown className="w-12 h-12 text-brandGold opacity-70" />
+      <ChevronDown className="sm:w-8 sm:h-8 md:w-12 md:h-12 text-brandGold opacity-70" />
     </button>
   );
 }
@@ -66,11 +66,11 @@ export default function Index() {
       {/* Meetings and Membership Section */}
       <section
         ref={clubActivitiesRef}
-        className="min-h-screen w-full flex flex-col justify-center bg-background px-4 sm:px-8 pt-16 relative overflow-hidden"
+        className="min-h-screen w-full flex flex-col justify-center bg-background px-4 sm:px-8 relative overflow-hidden pt-8 md:mt-0"
         aria-label="Club Activities section"
       >
         <BackgroundGrid className="absolute inset-0 w-full h-full" />
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 md:mb-8 text-white relative z-10">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-white relative z-10">
           Club Activities
         </h2>
 

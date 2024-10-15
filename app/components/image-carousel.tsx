@@ -13,7 +13,9 @@ export default function ImageCarousel({ imagePaths, alt }: ImageCarouselProps) {
     if (imagePaths.length === 0) return;
 
     const timer = setInterval(() => {
-      setCurrentImageIndex(prevIndex => (prevIndex + 1) % imagePaths.length);
+      setCurrentImageIndex(prevIndex =>
+        prevIndex === imagePaths.length - 1 ? 0 : prevIndex + 1,
+      );
     }, 5000);
 
     return () => clearInterval(timer);
