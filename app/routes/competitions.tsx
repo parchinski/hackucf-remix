@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
+// deemed to small for own file
 const FAQ_ITEMS = [
   {
     id: 'item-1',
@@ -42,17 +43,18 @@ const STATISTICS = [
 
 export default function Competitions() {
   return (
-    <main className="min-h-screen p-8 bg-background text-foreground pt-32">
+    <main className="min-h-screen p-8 bg-background text-foreground pt-28">
       <div className="max-w-6xl mx-auto">
-        <Link
-          to="/about-us"
-          className="block w-full text-center text-brandGold border-brandGold
-          border-2 py-2 rounded-md bg-background hover:bg-brandGold hover:text-background transition-colors mb-8"
-        >
-          About Us
-        </Link>
-
-        <h1 className="mb-4 text-5xl font-bold">Competitions</h1>
+        <div className="flex flex-col items-center justify-center mb-16 mt-8 px-12">
+          <h1 className="text-5xl font-bold">Competitions</h1>
+          <Link
+            to="/about-us"
+            className="absolute px-4 top-16 left-4 text-center text-brandGold border-brandGold
+          border-2 py-2 rounded-full bg-background hover:bg-brandGold hover:text-background transition-colors my-8"
+          >
+            Back to About Us
+          </Link>
+        </div>
         <p className="mb-12 text-xl">
           Hack@UCF participates in both offensive and defensive security across
           our two teams, KnightSec and the UCF Collegiate Cybersecurity

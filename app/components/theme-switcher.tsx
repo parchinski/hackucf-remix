@@ -40,7 +40,7 @@ export function ThemeSwitcherScript() {
           (function() {
             var theme = localStorage.getItem("theme");
             if (!theme) {
-              theme = "dark";
+              theme = "system";
               localStorage.setItem("theme", theme);
             }
             document.documentElement.setAttribute("data-theme", theme);
