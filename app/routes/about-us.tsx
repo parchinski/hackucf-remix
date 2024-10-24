@@ -192,7 +192,7 @@ export default function AboutUs() {
           <h2 className="text-3xl font-semibold mb-4 text-brandGold">
             Our Allies
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {PARTNER_LINKS.map(ally => (
               <a
                 key={ally.id}

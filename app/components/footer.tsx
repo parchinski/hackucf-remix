@@ -6,35 +6,46 @@ export function Footer() {
     {
       id: 'instagram',
       icon: <Instagram className="h-6 w-6" />,
-      url: 'https://www.instagram.com',
+      url: 'https://www.instagram.com/hack_ucf/',
       label: 'Instagram',
     },
     {
       id: 'twitter',
       icon: <Twitter className="h-6 w-6" />,
-      url: 'https://www.twitter.com',
+      url: 'https://x.com/HackUCF',
       label: 'Twitter',
     },
     {
       id: 'github',
       icon: <Github className="h-6 w-6" />,
-      url: 'https://www.github.com',
+      url: 'https://github.com/HackUCF',
       label: 'GitHub',
     },
     {
       id: 'linkedin',
       icon: <Linkedin className="h-6 w-6" />,
-      url: 'https://www.linkedin.com',
+      url: 'https://www.linkedin.com/company/collegiate-cyber-defense-club-at-ucf',
       label: 'LinkedIn',
     },
   ];
 
   const ACTION_LINKS = [
-    { id: 'join-the-fun', text: 'Join the Fun', url: '#' },
-    { id: 'hop-on-discord', text: 'Hop on Discord', url: '#' },
-    { id: 'view-the-calendar', text: 'View the Calendar', url: '#' },
-    { id: 'present-at-meeting', text: 'Present at a Meeting', url: '#' },
-    { id: 'join-mailing-list', text: 'Join the Mailing List', url: '#' },
+    {
+      id: 'join-the-fun',
+      text: 'Join the Fun',
+      url: 'https://join.hackucf.org',
+    },
+    {
+      id: 'hop-on-discord',
+      text: 'Hop on Discord',
+      url: 'https://discord.com/invite/VwkkDcJ',
+    },
+    { id: 'view-the-calendar', text: 'View the Calendar', url: '/calendar' },
+    {
+      id: 'present-at-meeting',
+      text: 'Present at a Meeting',
+      url: '/contact-us',
+    },
   ];
 
   return (

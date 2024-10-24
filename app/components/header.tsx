@@ -119,13 +119,14 @@ export function Header() {
                   className="w-full text-left text-sm text-white hover:text-background hover:bg-white transition-colors px-3 py-2 rounded-md"
                 >
                   {item.href.startsWith('http') ? (
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      prefetch="intent"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   ) : (
                     <Link to={item.href} prefetch="intent">
                       {item.name}
@@ -135,10 +136,18 @@ export function Header() {
               ))}
               <Button
                 variant="outline"
+                asChild
                 className="bg-background border-brandGold text-brandGold hover:bg-brandGold hover:text-background text-sm transition-colors w-full"
                 onClick={() => setIsOpen(false)}
               >
-                Join Our Discord
+                <Link
+                  rel="noopener norefferer"
+                  prefetch="intent"
+                  target="_blank"
+                  to="https://discord.com/invite/VwkkDcJ"
+                >
+                  Join Our Discord
+                </Link>
               </Button>
             </div>
           </SheetContent>

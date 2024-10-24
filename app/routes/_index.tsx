@@ -45,8 +45,11 @@ export default function Index() {
       <section className="min-h-screen w-full flex items-center justify-center px-8 bg-black relative">
         <HackerBg className="absolute inset-0 w-full h-full" />
         <div className="max-w-4xl text-center z-10 mt-16">
+          <h1 className="text-5xl font-bold bg-white text-transparent bg-clip-text drop-shadow-md py-1 animate-fade-in-up">
+            HACK@UCF
+          </h1>
           <h1 className="text-5xl font-bold mb-4 bg-white text-transparent bg-clip-text drop-shadow-md py-1 animate-fade-in-up">
-            Collegiate Cyber Defense Club at UCF
+            Collegiate Cyber Defense Club
           </h1>
           <p className="text-2xl mb-8 text-white font-semibold drop-shadow-md animate-fade-in-up animation-delay-300">
             We are the University of Central Florida's only defensive and
@@ -54,6 +57,7 @@ export default function Index() {
           </p>
           <Link
             to="/about-us"
+            prefetch="intent"
             className="transition-colors border-2 bg-background hover:bg-brandGold text-lg hover:text-background border-brandGold text-brandGold rounded-full py-2 px-4 inline-block animate-fade-in-up animation-delay-500"
             aria-label="Learn more about Collegiate Cyber Defense Club"
           >
@@ -94,8 +98,13 @@ export default function Index() {
                 </CardDescription>
               </CardContent>
               <CardFooter className="py-2 sm:py-3">
-                <Button className="w-full bg-brandGold hover:bg-brandGoldHover text-background text-xs sm:text-sm">
-                  {card.buttonText}
+                <Button
+                  asChild
+                  className="w-full bg-brandGold hover:bg-brandGoldHover text-background text-xs sm:text-sm"
+                >
+                  <Link to={card.link} prefetch="intent" className="">
+                    {card.buttonText}
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>

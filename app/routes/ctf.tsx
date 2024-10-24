@@ -8,8 +8,7 @@ export default function CaptureTheFlag() {
           <h1 className="text-5xl font-bold">Capture the Flag</h1>
           <Link
             to="/about-us"
-            className="absolute px-4 top-16 left-4 text-center text-brandGold border-brandGold
-          border-2 py-2 rounded-full bg-background hover:bg-brandGold hover:text-background transition-colors my-8"
+            className="text-center border-2 bg-background hover:bg-brandGold text-lg hover:text-background border-brandGold text-brandGold rounded-full w-screen max-w-6xl mt-16 py-1"
           >
             Back to About Us
           </Link>
