@@ -55,7 +55,7 @@ export default function ImageCarousel({ imagePaths, alt }: ImageCarouselProps) {
       width={1112}
       height={834}
       className="w-full h-auto"
-      loading={'eager'}
+      loading={'lazy'}
     />
   );
 
