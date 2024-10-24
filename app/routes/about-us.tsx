@@ -78,7 +78,7 @@ export default function AboutUs() {
             <ul className="flex flex-wrap justify-center gap-4">
               {NAV_LINKS.map(link => (
                 <li key={link.id}>
-                  <Link to={link.href}>
+                  <Link to={link.href} prefetch="intent">
                     <Button
                       variant="outline"
                       className="border-2 bg-background hover:bg-brandGold text-lg hover:text-background border-brandGold text-brandGold rounded-full p-4"
