@@ -42,7 +42,7 @@ export function Header() {
             src="/hackucf-logo.svg"
             alt="HackUCF Logo"
             className="w-48 md:w-64"
-            loading="lazy"
+            loading="eager"
           />
         </Link>
       </div>

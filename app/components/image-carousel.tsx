@@ -47,7 +47,7 @@ export default function ImageCarousel({ imagePaths, alt }: ImageCarouselProps) {
     return `translateX(-${currentIndex * 100}%)`;
   };
 
-  const renderImage = (path: string, imageAlt: string, priority = false) => (
+  const renderImage = (path: string, imageAlt: string) => (
     <Image
       src={`/${path}`}
       alt={imageAlt}
@@ -55,8 +55,7 @@ export default function ImageCarousel({ imagePaths, alt }: ImageCarouselProps) {
       width={1112}
       height={834}
       className="w-full h-auto"
-      priority={priority}
-      loading={priority ? 'eager' : 'lazy'}
+      loading={'eager'}
     />
   );
 
@@ -85,7 +84,7 @@ export default function ImageCarousel({ imagePaths, alt }: ImageCarouselProps) {
             key={generateUniqueId('main', image)}
             className="w-full flex-shrink-0"
           >
-            {renderImage(image, `${alt} ${index + 1}`, index === 0)}
+            {renderImage(image, `${alt} ${index + 1}`)}
           </div>
         ))}
 
