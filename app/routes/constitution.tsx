@@ -12,7 +12,7 @@ export default function Constitution() {
   return (
     <main className="min-h-screen p-8 bg-background text-foreground pt-28">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col items-center justify-center mb-16 mt-8 px-12">
+        <div className="flex flex-col items-center justify-center mb-16 mt-8">
           <h1 className="text-5xl font-bold">
             Constitution of Collegiate Cyber Defense Club
           </h1>
