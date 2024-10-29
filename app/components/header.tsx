@@ -26,7 +26,7 @@ const NAV_ITEMS = [
   {
     id: 'writeups',
     name: 'Writeups',
-    href: 'https://plinko.horse',
+    href: 'https://hackucf-writeups.pages.dev/',
   },
 ];
 
