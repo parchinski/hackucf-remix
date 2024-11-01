@@ -65,11 +65,13 @@ export default function Index() {
           </Link>
         </div>
         <ScrollArrow onClick={scrollToNextSection} />
+        {/* Add transition overlay */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-background z-20" />
       </section>
 
       {/* Meetings and Membership Section */}
       <section
-        className="min-h-screen w-full flex flex-col justify-top bg-background px-4 sm:px-8 relative overflow-hidden pt-8"
+        className="min-h-screen w-full flex flex-col justify-top bg-background px-4 sm:px-8 relative overflow-hidden"
         aria-label="Club Activities section"
         ref={clubActivitiesRef}
       >
@@ -102,7 +104,7 @@ export default function Index() {
                   asChild
                   className="w-full bg-brandGold hover:bg-brandGoldHover text-background text-xs sm:text-sm"
                 >
-                  <Link to={card.link} prefetch="intent" className="">
+                  <Link to={card.link} prefetch="intent">
                     {card.buttonText}
                   </Link>
                 </Button>
