@@ -10,7 +10,7 @@ export default function CollegiateCyberDefenseCompetition() {
           </h1>
           <Link
             to="/about-us"
-            className="text-center border-2 bg-background hover:bg-brandGold text-lg hover:text-background border-brandGold text-brandGold rounded-full w-screen max-w-6xl mt-16 py-1"
+            className="text-center border-2 bg-background hover:bg-brandGold text-lg hover:text-background border-brandGold text-brandGold rounded-full w-full max-w-6xl mt-16 py-1"
           >
             Back to About Us
           </Link>
