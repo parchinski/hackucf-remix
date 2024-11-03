@@ -76,7 +76,7 @@ export default function Index() {
         ref={clubActivitiesRef}
       >
         <BackgroundGrid className="absolute inset-0 w-full h-full" />
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-white relative z-10">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-white relative z-10 my-8">
           Club Activities
         </h2>
 
