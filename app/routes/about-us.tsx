@@ -2,13 +2,13 @@ import { Link } from '@remix-run/react';
 
 import { Button } from '@/components/ui/button';
 
-// data deemed to small for own file
 const NAV_LINKS = [
   { id: 'competitions', name: 'Competitions', href: '/competitions' },
   { id: 'ctf', name: 'Capture The Flag Competitions', href: '/ctf' },
   { id: 'ccdc', name: 'CCDC Competition', href: '/ccdc' },
   { id: 'faq', name: 'FAQ', href: '/faq' },
   { id: 'constitution', name: 'Constitution', href: '/constitution' },
+  { id: 'nonprofit', name: 'Nonprofit', href: '/nonprofit' },
 ];
 
 const PARTNER_LINKS = [
