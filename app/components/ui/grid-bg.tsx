@@ -26,21 +26,24 @@ const BackgroundGrid = ({
   const svgDataUrl = `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 
   return (
-    <div
-      className={`pointer-events-none absolute inset-0 left-0 top-0 flex h-full w-full ${className}`}
-      style={{
-        backgroundImage: `url("${svgDataUrl}")`,
-        backgroundRepeat: 'repeat',
-        backgroundSize: cellSize,
-        maskImage: fade
-          ? 'radial-gradient(ellipse at top, white, transparent 70%)'
-          : undefined,
-        WebkitMaskImage: fade
-          ? 'radial-gradient(ellipse at top, white, transparent 70%)'
-          : undefined,
-      }}
-      {...props}
-    />
+    <>
+      <div
+        className={`pointer-events-none absolute inset-0 left-0 top-0 flex h-full w-full ${className}`}
+        style={{
+          backgroundImage: `url("${svgDataUrl}")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: cellSize,
+          maskImage: fade
+            ? 'radial-gradient(ellipse at top, white, transparent 70%)'
+            : undefined,
+          WebkitMaskImage: fade
+            ? 'radial-gradient(ellipse at top, white, transparent 70%)'
+            : undefined,
+        }}
+        {...props}
+      />
+      <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-t from-transparent to-background z-20" />
+    </>
   );
 };
 
