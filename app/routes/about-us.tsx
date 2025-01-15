@@ -4,11 +4,12 @@ import { Button } from '@/components/ui/button';
 
 const NAV_LINKS = [
   { id: 'competitions', name: 'Competitions', href: '/competitions' },
-  { id: 'ctf', name: 'Capture The Flag Competitions', href: '/ctf' },
-  { id: 'ccdc', name: 'CCDC Competition', href: '/ccdc' },
+  { id: 'ctf', name: 'CTF Competitions', href: '/ctf' },
+  { id: 'ccdc', name: 'CCDC', href: '/ccdc' },
   { id: 'faq', name: 'FAQ', href: '/faq' },
   { id: 'constitution', name: 'Constitution', href: '/constitution' },
   { id: 'nonprofit', name: 'Nonprofit', href: '/nonprofit' },
+  { id: 'execs', name: 'Executives', href: '/execs' },
 ];
 
 const PARTNER_LINKS = [
