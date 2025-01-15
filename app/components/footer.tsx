@@ -46,6 +46,11 @@ export function Footer() {
       text: 'Present at a Meeting',
       url: '/contact-us',
     },
+    {
+      id: 'donate',
+      text: 'Donate',
+      url: 'https://donate.stripe.com/7sI7un5vkfGV9xKaEE',
+    },
   ];
 
   return (

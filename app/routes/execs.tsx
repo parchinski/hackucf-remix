@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 
-const executivesData = [
+const EXECUTIVE_DATA = [
   {
     year: '2012-13',
     president: 'Gaelan Adams',
@@ -107,7 +107,7 @@ const executivesData = [
 const positions = ['president', 'vicePresident', 'treasurer', 'secretary'];
 
 export default function Executives() {
-  const chartData = executivesData.map(year => ({
+  const chartData = EXECUTIVE_DATA.map(year => ({
     name: year.year,
     value: 0.5,
   }));
@@ -151,7 +151,7 @@ export default function Executives() {
                   <ChartTooltip
                     content={({ active, payload }) => {
                       if (active && payload && payload.length) {
-                        const yearData = executivesData.find(
+                        const yearData = EXECUTIVE_DATA.find(
                           d => d.year === payload[0].payload.name,
                         );
                         if (yearData) {
@@ -220,7 +220,7 @@ export default function Executives() {
                 </tr>
               </thead>
               <tbody>
-                {executivesData.map((year, index) => (
+                {EXECUTIVE_DATA.map((year, index) => (
                   <tr
                     key={year.year}
                     className={`
